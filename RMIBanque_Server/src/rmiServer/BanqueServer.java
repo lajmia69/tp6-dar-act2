@@ -13,10 +13,8 @@ public class BanqueServer {
             p.setProperty(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.rmi.registry.RegistryContextFactory");
             p.setProperty(Context.PROVIDER_URL, "rmi://localhost:1099");
             
-            // Création du service
             IBanque banque = new BanqueImpl();
 
-            // Publication via JNDI
             Context ctx = new InitialContext(p);
             ctx.bind("Banque", banque);
 
